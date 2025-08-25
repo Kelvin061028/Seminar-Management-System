@@ -1,0 +1,25 @@
+1|Mental Health Education|November 25, 2025|09:00 AM - 10:00 AM
+2|Smart Eating & Nutrition|November 25, 2025|10:30 AM - 11:30 AM
+3|Screen Time & Digital Wellness|November 26, 2025|01:00 PM - 02:00 PM
+4|Workshop on Stress Management|November 26, 2025|02:30 PM - 03:30 PM
+5|Creating a Healthier Life as the Last Topic|November 27, 2025|10:00 AM - 11:00 AM
+6|Initiator Yoga|November 27, 2025|11:30 AM - 12:30 PM
+7|Academic Performance and Sleep|November 28, 2025|09:00 AM - 10:00 AM
+8|Is Coffee Beneficial or Dangerous?|November 28, 2025|10:30 AM - 11:30 AM
+9|Comprehending Immunizations|November 28, 2025|02:00 PM - 03:00 PM
+10|Social media and mental health|November 29, 2025|09:00 AM - 10:00 AM
+11|Work at Your Desk to Stay Active|November 29, 2025|10:15 AM - 11:15 AM
+12|Mental Clarity Journal|November 29, 2025|02:00 PM - 03:00 PM
+13|Students' First Aid Basics|November 30, 2025|09:00 AM - 10:00 AM
+14|Brain Function & Hydration|November 30, 2025|10:30 AM - 11:30 AM
+15|Ideal Lifestyles Challenge|November 30, 2025|01:00 PM - 02:00 PM
+16|Overcoming Exam Anxiety|November 31, 2025|09:00 AM - 10:00 AM
+17|Development of a Sleep Schedule|November 31, 2025|10:30 AM - 11:30 AM
+18|Techniques for Digital Detox|December 01, 2025|09:00 AM - 10:00 AM
+19|Scheduling Screen Time|December 01, 2025|10:15 AM - 11:15 AM
+20|Nutritious Snack Ideas|December 02, 2025|09:00 AM - 10:00 AM
+21|Back Health and Posture|December 02, 2025|10:30 AM - 11:30 AM
+22|Comprehending the Effects of Sugar|December 02, 2025|01:00 PM - 02:00 PM
+23|Vitamin D & Sunlight|December 03, 2025|09:00 AM - 10:00 AM
+24|Monitoring Your Exercise Objectives|December 03, 2025|10:30 AM - 11:30 AM
+25|Healthy College Life Management|December 03, 2025|02:00 PM - 03:00 PM
