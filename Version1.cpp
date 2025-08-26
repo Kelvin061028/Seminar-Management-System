@@ -466,6 +466,8 @@ void userRegister(vector<User>& users) {
             cout << "Do not leave it empty !\n\n";
     } while (user.name.empty());
 
+   bool isValid = false;
+
     do {
         cout << "Gender ( Female/F ,Male/M ): ";
         getline(cin, user.gender);
@@ -476,15 +478,16 @@ void userRegister(vector<User>& users) {
         for (char& inputChar : user.gender) inputChar = tolower(inputChar);
         if (user.gender == "female" || user.gender == "f") {
             user.gender = "Female";
-            break;
+            isValid = true;
         } else if (user.gender == "male" || user.gender == "m") {
             user.gender = "Male";
-            break;
+            isValid = true;
         } else {
             cout << "Invalid input ! Please enter Female/F or Male/M !!\n\n";
         }
-    } while (true);
+    } while (!isValid);
 
+    bool isAgeValid = false;
     do {
         string ageInput;
         cout << "Age                        : ";
@@ -501,14 +504,14 @@ void userRegister(vector<User>& users) {
             age = stoi(ageInput);
             if (age > 0 && age <= 120) {
                 user.age = age;
-                break;
+                isAgeValid =true;
             } else {
                 cout << "Please enter an age between 1 and 120.\n\n";
             }
         } else {
             cout << "Invalid input. Please enter numeric digits only.\n\n";
         }
-    } while (true);
+    } while (!isAgeValid);
 
     do {
         cout << "IC                         : ";
@@ -799,8 +802,9 @@ void displayBookingScreen(vector<User>& users, const string& userIDEnter) {
     while (addOnYesNo == 1) {
         string checkInput;
         int sessionIDbook = -1;
+        bool isValidSessionID = false;
 
-        while (true) {
+        while (!isValidSessionID) {
             displayUserHeader();
             displaySessionMenu(sessions);
 
@@ -822,7 +826,7 @@ void displayBookingScreen(vector<User>& users, const string& userIDEnter) {
             if (all_of(checkInput.begin(), checkInput.end(), ::isdigit)) {
                 sessionIDbook = stoi(checkInput);
                 if (sessionIDbook > 0) {
-                    break;
+                    isValidSessionID = true;
                 } else {
                     cout << "Invalid input. Please enter the valid session ID !!!\n\n";
                 }
@@ -895,12 +899,12 @@ void displayBookingScreen(vector<User>& users, const string& userIDEnter) {
                 break;
             }
         }
-
-        while (true) {
+        bool isValidInputYN = false;
+        while (!isValidInputYN) {
             cout << "\nDo you want to add another booking? (YES[1]/NO[0]): ";
             if (cin >> addOnYesNo) {
                 if (addOnYesNo == 1 || addOnYesNo == 0)
-                    break;
+                    isValidInputYN= true;
                 else
                     cout << "Invalid input. Please make sure the input is integer!! (0/1) !!\n\n";
             } else {
@@ -927,25 +931,29 @@ void displayBookingScreen(vector<User>& users, const string& userIDEnter) {
         }
 
         int confirmBooking;
-        while (true) {
+        bool validChoice1 = false;
+
+        while (!validChoice1) {
             cout << "\n\nConfirm your booking >> YES[1] or NO[0]\n";
             cout << "\nEnter your choice > ";
             if (cin >> confirmBooking && (confirmBooking == 1 || confirmBooking == 0))
-                break;
+                validChoice1 = true;
             cout << "\nInvalid input.Please enter 1/0 only\n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
         int doubleConfirmBooking;
-        while (true) {
+        bool validChoice2= false;
+
+        while (!validChoice2) {
             if (confirmBooking == 1) {
                 cout << "\nAre you sure CONFIRM all the booking above (YES[1]/NO[0]) >> ";
             } else {
                 cout << "\nAre you sure CANCEL all the booking above (YES[0]/NO[1]) >> ";
             }
             if (cin >> doubleConfirmBooking && (doubleConfirmBooking == 1 || doubleConfirmBooking == 0))
-                break;
+                validChoice2 = true;
             cout << "\nInvalid input.Please enter 1/0 only\n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -1432,14 +1440,15 @@ void userScreen(const string& userIDEnter) {
 
     displayUserHeader();
     int choice = -1;
+    bool validAction = false;
 
-    while (true) {
+    while (!validAction) {
         cout << "\nChoose an action to continue :";
         cout << "\n 1. View menu & booking seminar sessions\n 2. View profile \n 3. Filter \n 4. Feedback \n 0. Exit";
         cout << "\n\nEnter your choice (integer)(0 - 4) : ";
         if (cin >> choice) {
             if (choice == 0 || choice == 1 || choice == 2 || choice == 3 || choice == 4) {
-                break;
+                validAction = true;
             } else {
                 cout << "Invalid input. Please enter integer only!! (0-4)!\n\n";
             }
@@ -1460,12 +1469,14 @@ void userScreen(const string& userIDEnter) {
         int userChoice;
         cout << "\nDisplaying profile page....";
         displayProfileHeader1();
-        while (true) {
+        bool validOption = false;
+
+        while (!validOption) {
             cout << "Options available : \n 1. Personal information \n 2. Session booked \n 0. Return to previous page...\n";
             cout << "\nEnter your choice (1/2/0):";
             if (cin >> userChoice) {
                 if (userChoice == 0 || userChoice == 1 || userChoice == 2)
-                    break;
+                    validOption = true;
                 else
                     cout << "Invalid input. Please enter integer only!! (0-2)!!\n\n\n";
             } else {
@@ -1531,14 +1542,15 @@ void userScreen(const string& userIDEnter) {
 void displayUserMainMenu(vector<User>& users) {
     int userChoice;
     do {
-        while (true) {
+        bool validInt = false;
+        while (!validInt) {
             displayUserHeader();
             cout << "Login as USER : ";
             cout << "\n 1. Sign up as new user\n 2. Login as existing user ";
             cout << "\nEnter an integer (1/2 , 0 to return back )  : ";
             if (cin >> userChoice) {
                 if (userChoice == 0 || userChoice == 1 || userChoice == 2) {
-                    break;
+                    validInt = true;
                 } else {
                     cout << "Invalid input. Please enter 0-2 only!!\n\n";
                 }
@@ -1586,7 +1598,9 @@ void displayMainMenu(vector<User>& users) {
 
     int userChoice;
     do {
-        while (true) {
+        bool validUserType = false;
+
+        while (!validUserType) {
             displayMainHeader();
             cout << "Welcome to the Health Seminar System !" << endl;
             cout << "Please choose an option below to get started. " << endl;
@@ -1597,7 +1611,7 @@ void displayMainMenu(vector<User>& users) {
             cout << "\nEnter an integer(1 or 2) :";
             if (cin >> userChoice) {
                 if (userChoice == 0 || userChoice == 1 || userChoice == 2) {
-                    break;
+                    validUserType = true;
                 } else {
                     cout << "Invalid input !! Please enter only 0 ~2.\n\n";
                 }
@@ -1639,3 +1653,4 @@ int main() {
     return 0;
 
 }
+
