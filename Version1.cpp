@@ -964,7 +964,7 @@ void displayBookingScreen(vector<User>& users, const string& userIDEnter) {
 }
 
 /*==============================================================================
-   KELVIN MODULE (ADMIN + USER EXTRAS)
+    (ADMIN + USER EXTRAS)
 ==============================================================================*/
 void displayAdminScreen(vector<User>& users) {
     vector<Session> sessions;
@@ -1505,9 +1505,7 @@ void userScreen(const string& userIDEnter) {
         break;
     }
     case 3: {
-        // (Optional) could mirror some filter for users; keeping placeholder
-        cout << "User filter coming soon.\n";
-        userScreen(userIDEnter);
+        
         break;
     }
     case 4: {
@@ -1639,4 +1637,5 @@ int main() {
     loadUserDetails(users);
     displayMainMenu(users);
     return 0;
+
 }
